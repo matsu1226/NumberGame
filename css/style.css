@@ -1,0 +1,108 @@
+body {
+    background-color: #ccc;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#container {
+    /* 50px *2 + 10px*2 */
+    margin: 16px auto;
+}
+
+#board {
+    display: none;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+#board li {
+    background: #00aaff;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 4px 0 #0088cc;
+}
+
+/* pressedクラス=> ゲームスタート前：付与　スタート：外す　クリック時：付与 */
+#board li.pressed {     
+    background-color: #ccc;
+    box-shadow: none;
+    margin-top: 9px;
+    margin-bottom: 1px;
+}
+
+#timer {
+    margin-bottom: 8px;
+    font-size: 20px;
+    text-align: right;
+}
+
+
+#btns{
+    width: 120px;
+    margin: 0 auto;
+}
+
+.level-btn{
+    /* flex: 1; */
+    display: flex;
+    position: relative;
+    margin-bottom: 5px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #ff8178;
+    padding: 8px;
+    border-radius: 16px;
+    text-align: center;
+    /* box-shadow: 0 4px 0 #d1483e; */
+}
+.level-btn::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border: 10px solid transparent;
+    border-top: 10px solid #ff8178;
+}
+#plus,#minus{
+    flex: 1;
+}
+#levelNum{
+    flex: 2;
+}
+
+
+#createGames {
+    transition: all 1s;
+}
+#btn {
+    display: none;
+}
+#btn,#createGames {
+    /* flex: 2; */
+    margin-bottom: 5px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #f44336;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 4px 0 #d1483e;
+}
+
+#btn:active,#createGames:active {
+    position: relative;
+    top: 4px;
+    box-shadow: none;
+}
